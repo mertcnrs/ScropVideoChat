@@ -1,13 +1,30 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Home(): React.ReactNode {
+  const [data, setData] = useState<string[]>([]); // Örnek bir durum
+  const [count, setCount] = useState<number>(0);
+
   useEffect(() => {
-    // ... kod
-  }, []);
+    // Bu kod, 'data' değiştiğinde çalışacak
+    console.log('Data değişti:', data);
+    
+    // Örnek bir API çağrısı
+    const fetchData = async () => {
+      const response = await fetch('/api/data');
+      const result = await response.json();
+      setData(result);
+    };
+
+    fetchData();
+  }, [data]); // 'data' bağımlılığı eklendi
+
+  useEffect(() => {
+    // Bu kod, 'count' değiştiğinde çalışacak
+  }, [count]);
 
   return (
     <div className="h-screen bg-gradient-to-b from-black to-purple-900 text-white overflow-hidden">
