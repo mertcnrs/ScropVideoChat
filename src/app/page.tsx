@@ -1,15 +1,13 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Home(): React.ReactNode {
-  const [timeouts, setTimeouts] = useState<number[]>([]);
-
   useEffect(() => {
     // ... kod
-  }, [timeouts]);
+  }, []);
 
   return (
     <div className="h-screen bg-gradient-to-b from-black to-purple-900 text-white overflow-hidden">
