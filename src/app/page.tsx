@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Container } from '@radix-ui/themes';
 
 export default function Home(): React.ReactNode {
+  const [timeouts, setTimeouts] = useState<number[]>([]); // Örnek bir tanım
+
+  useEffect(() => {
+    // ... kod
+  }, [timeouts]);
+
   return (
     <div className="h-screen bg-gradient-to-b from-black to-purple-900 text-white overflow-hidden">
       {/* Header */}
