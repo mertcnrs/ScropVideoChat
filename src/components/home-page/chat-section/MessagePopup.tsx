@@ -98,7 +98,7 @@ export default function MessagePopup({ isOpen, onRequestClose, onNewMessage }: M
     return () => {
       timeouts.forEach((timeout) => clearTimeout(timeout));
     };
-  }, []); // only on initial render
+  }, [onNewMessage]);
 
   const handleReadMessages = () => {
     setUnreadCount(0);
