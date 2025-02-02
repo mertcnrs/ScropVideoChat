@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function Home(): React.ReactNode {
   const [data, setData] = useState<string[]>([]); // Örnek bir durum
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState<number>(0); // 'count' değişkenini ekledik
 
   useEffect(() => {
     // Bu kod, 'data' değiştiğinde çalışacak
@@ -20,11 +20,7 @@ export default function Home(): React.ReactNode {
     };
 
     fetchData();
-  }, [data]); // 'data' bağımlılığı eklendi
-
-  useEffect(() => {
-    // Bu kod, 'count' değiştiğinde çalışacak
-  }, [count]);
+  }, [data, count]); // 'data' ve 'count' bağımlılığı eklendi
 
   return (
     <div className="h-screen bg-gradient-to-b from-black to-purple-900 text-white overflow-hidden">
