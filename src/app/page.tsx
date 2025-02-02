@@ -1,26 +1,9 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Container } from '@radix-ui/themes';
 
 export default function Home(): React.ReactNode {
-  const [data, setData] = useState<string[]>([]); // Örnek bir durum
-
-  useEffect(() => {
-    // Bu kod, 'data' değiştiğinde çalışacak
-    console.log('Data değişti:', data);
-    
-    // Örnek bir API çağrısı
-    const fetchData = async () => {
-      const response = await fetch('/api/data');
-      const result = await response.json();
-      setData(result);
-    };
-
-    fetchData();
-  }, [data]); // 'data' bağımlılığı eklendi
-
   return (
     <div className="h-screen bg-gradient-to-b from-black to-purple-900 text-white overflow-hidden">
       {/* Header */}
