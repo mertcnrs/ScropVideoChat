@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Home(): React.ReactNode {
-  const [timeouts, setTimeouts] = useState<number[]>([]); // Örnek bir tanım
+  const [timeouts, setTimeouts] = useState<number[]>([]);
 
   useEffect(() => {
     // ... kod
